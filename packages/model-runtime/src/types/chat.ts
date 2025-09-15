@@ -207,6 +207,9 @@ export interface ChatStreamCallbacks {
   onThinking?: (content: string) => Promise<void> | void;
   onToolsCalling?: (data: {
     chunk: MessageToolCallChunk[];
+    /**
+     * full tools calling array
+     */
     toolsCalling: MessageToolCall[];
   }) => Promise<void> | void;
   onUsage?: (usage: ModelTokensUsage) => Promise<void> | void;
