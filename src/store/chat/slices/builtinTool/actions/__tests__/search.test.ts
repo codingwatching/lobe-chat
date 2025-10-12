@@ -1,4 +1,6 @@
 import { crawlResultsPrompt, searchResultsPrompt } from '@lobechat/prompts';
+import { ChatMessage } from '@lobechat/types';
+import { SearchContent, SearchQuery, UniformSearchResponse } from '@lobechat/types';
 import { act, renderHook } from '@testing-library/react';
 import { Mock, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -6,8 +8,6 @@ import { searchService } from '@/services/search';
 import { useChatStore } from '@/store/chat';
 import { chatSelectors } from '@/store/chat/selectors';
 import { CRAWL_CONTENT_LIMITED_COUNT } from '@/tools/web-browsing/const';
-import { ChatMessage } from '@/types/message';
-import { SearchContent, SearchQuery, UniformSearchResponse } from '@/types/tool/search';
 
 // Mock services
 vi.mock('@/services/search', () => ({
